@@ -1,0 +1,51 @@
+import { Head } from 'mdx-deck'
+import { Image } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+import highlighter from 'prism-react-renderer/themes/ultramin';
+export { default as theme } from './theme'
+
+<Head>
+  <title>Design Patterns for Modern Web APIs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Raleway:100,300,400,500,700" />
+  <link rel="stylesheet" href="styles.css" />
+</Head>
+
+# Design Patterns for Modern Web APIs
+
+---
+
+# Hi, I'm David. I like
+
+- 💻 Open Source: [FeathersJS](https://feathersjs.com/)
+- 🗺️ Community: [Cowork & Coffee](https://www.meetup.com/codecoffeeyvr/), [Nodeschool](https://nodeschool.io/vancouver/)
+- 🧗‍♂️ Rock Climbing 🧗🏽
+- 🏭 Industrial music 🔊
+- 🚀 Science Fiction 🤖
+
+---
+
+# Today I'd like to talk about
+
+- What's a design pattern
+- Service Layer
+- REST
+- Middleware
+- Real-time 
+- GraphQL (❓)
+
+---
+
+<CodeSurfer
+  theme={highlighter}
+  code={require("!raw-loader!./snippets/service-layer.js").default}
+  lang="js"
+  showNumbers={false}
+  dark={false}
+/>
+
+---
+
+# Thank you!
+
+- [@daffl](https://twitter.com/daffl)
+- [![Bidali logo](img/bidali-logo.png)](https://bidali.com)

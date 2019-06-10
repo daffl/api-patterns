@@ -1,0 +1,24 @@
+{
+  "name": "decentralized-web",
+  "description": "Getting ready for the decentralized web",
+  "version": "0.3.1",
+  "private": true,
+  "homepage": "https://bidali.com",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:daffl/decentralized-web.git"
+  },
+  "engines": {
+    "node": "^11.0.0"
+  },
+  "scripts": {
+    "start": "mdx-deck slides.mdx -p 8081",
+    "build": "rm -rf docs/ && mdx-deck build slides.mdx --no-html -d docs && cp -R img/ docs/img && cp styles.css docs/"
+  },
+  "devDependencies": {
+    "mdx-deck": "^1.10.2",
+    "mdx-deck-code-surfer": "^0.5.5",
+    "raw-loader": "^2.0.0",
+    "styled-components": "^4.2.0"
+  }
+}

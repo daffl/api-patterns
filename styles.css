@@ -1,0 +1,15 @@
+h1, h2, h3 {
+  font-weight: 300;
+}
+
+pre .string {
+  color: #e4517f !important;
+}
+
+pre .keyword, pre .tag {
+  color: #4b4df1 !important;
+}
+
+.token.function {
+  color: #808080 !important;
+}
