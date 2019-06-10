@@ -14,7 +14,7 @@ export { default as theme } from './theme'
 
 ---
 
-# Hi, I'm David. I like
+## Hi, I'm David. I like
 
 - 💻 Open Source: [FeathersJS](https://feathersjs.com/)
 - 🗺️ Community: [Cowork & Coffee](https://www.meetup.com/codecoffeeyvr/), [Nodeschool](https://nodeschool.io/vancouver/)
@@ -24,7 +24,7 @@ export { default as theme } from './theme'
 
 ---
 
-# Today I'd like to talk about
+## Today I'd like to talk about
 
 - What's a design pattern
 - Service Layer
@@ -35,6 +35,22 @@ export { default as theme } from './theme'
 
 ---
 
+## What's a Design Pattern?
+
+*Design patterns are formalized best practices that the programmer can use to solve common problems when designing an application or system.*
+
+---
+
+## Service Layer
+
+*Defines an application’s boundary with a layer of services that establishes a set of available operations and coordinates the application’s response in each operation.*
+
+---
+
+<Image src="img/service-layer.png" size="contain" />
+
+---
+
 <CodeSurfer
   theme={highlighter}
   code={require("!raw-loader!./snippets/service-layer.js").default}
@@ -42,6 +58,129 @@ export { default as theme } from './theme'
   showNumbers={false}
   dark={false}
 />
+
+---
+
+## Service Layer Advantages
+
+- __Separation of Concerns and Testability:__ Test the application logic separate from how it is being accessed.
+- __Self documenting:__ New developers can see what the application provides in the context of the programming language
+- __Transport agnostic:__ Clients like a CLI, GUI or web framework can use the service layer directly.
+
+---
+
+## REST
+
+__Re__presentational __S__tate __T__ransfer is an architectural style that defines a set of constraints for creating web APIs.
+
+---
+
+## REST Constraints
+
+- __Client-Server:__ Server: Data storage and application logic; Client: Requesting and displaying
+- __Statelessness:__ Client sends all information to process request.
+- __Caching:__ Non-modifying requests can be cached.
+- __Layered System:__ Allows for intermediaries
+- __Uniform Interface:__ Well defined operations to execute on resources.
+
+---
+
+## REST Resources and Operations
+
+A resource can be anything that is uniquely addressable.
+
+- __GET:__ Read a single or a list of resources
+- __POST:__ Create a new resource
+- __PUT:__ Replaces resource(s) with new data
+- __PATCH:__ Merges the resource(s) with new data
+- __DELETE:__ Delete the resource(s) at location
+
+---
+
+## REST Service Layer
+
+| HTTP method | Service layer method |
+| --- | --- |
+| GET /messages      | messages.find() |
+| GET /messages/1    | messages.get(1) |
+| POST /messages     | messages.create(body) |
+| PUT /messages/1    | messages.update(1, body) |
+| PATCH /messages/1  | messages.patch(1, body) |
+| DELETE /messages/1 | messages.remove(1, body) |
+
+
+---
+
+<CodeSurfer
+  theme={highlighter}
+  code={require("!raw-loader!./snippets/message-service.js").default}
+  lang="js"
+  showNumbers={false}
+  dark={false}
+/>
+
+---
+
+## REST Services
+
+- Combine advantages of service layer and REST resources
+- HTTP-friendly but protocol independent
+- No need for repetitive GET, POST etc. handlers and routes
+- Easy to document, test and re-use
+
+---
+
+<Image src="img/rest-transport.svg" size="contain" />
+
+---
+
+<Image src="img/rest-websocket-transport.svg" size="contain" />
+
+---
+
+<Image src="img/http-socketio.svg" size="contain" />
+
+---
+
+## Middleware
+
+Workflows and cross-cutting concerns that can be added to services dynamically, e.g.
+
+- Validation
+- Checking permissions
+- Sending email on new user
+- Notifying clients about changes
+
+---
+
+<Image src="img/middleware.svg" size="contain" />
+
+---
+
+## Real-time
+
+| HTTP method | Service layer method | Real-time event |
+| --- | --- | --- |
+| GET /messages      | messages.find() | - |
+| GET /messages/1    | messages.get(1) | - |
+| POST /messages     | messages.create(body) | `message created` |
+| PUT /messages/1    | messages.update(1, body) | `message updated` |
+| PATCH /messages/1  | messages.patch(1, body) | `message patched` |
+| DELETE /users/1 | messages.remove(1, body) | `message removed` |
+
+---
+
+<Image src="img/real-time.svg" size="contain" />
+
+---
+
+## Putting it all Together
+
+- __Service layer:__ Interface to our application logic
+- __REST:__ An architectural design principle for creating web APIs
+- __RESTful services:__ A service layer that follows the REST architecture
+- __Middleware:__ Reusable functions that can control the flow of data
+- __Real-time:__ Events that can be sent automatically when following the REST architecture
 
 ---
 

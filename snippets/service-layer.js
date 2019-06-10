@@ -1,4 +1,5 @@
 class ChatApplication {
+
   login (username, password) {},
     
   logout (user) {},
@@ -8,4 +9,5 @@ class ChatApplication {
   sendMessage(message, roomId, user) {}
 
   sendPrivateMessage(message, receiverId, user) {}
+
 }
