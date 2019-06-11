@@ -12,13 +12,15 @@ export { default as theme } from './theme'
 
 # Design Patterns for Modern Web APIs
 
+[daffl.github.io/api-patterns](https://daffl.github.io/api-patterns)
+
 ---
 
 ## Hi, I'm David. I like
 
 - 💻 Open Source: [FeathersJS](https://feathersjs.com/)
 - 🗺️ Community: [Cowork & Coffee](https://www.meetup.com/codecoffeeyvr/), [Nodeschool](https://nodeschool.io/vancouver/)
-- 🧗‍♂️ Rock Climbing 🧗🏽
+- 🧗‍♂️ Rock Climbing ⛰️
 - 🏭 Industrial music 🔊
 - 🚀 Science Fiction 🤖
 
@@ -45,7 +47,7 @@ can use to solve common problems when designing an application or system.
 
 Defines an application’s boundary with a layer of services that
 establishes a set of available operations and coordinates the application’s
-response in each operation.
+response in each operation. [[P of EAA](https://martinfowler.com/eaaCatalog/serviceLayer.html)]
 
 ---
 
@@ -63,7 +65,7 @@ response in each operation.
 
 ---
 
-## Service Layer Advantages
+## Why a Service Layer?
 
 - __Separation of Concerns and Testability:__ Test the application logic separate from how it is being accessed
 - __Self documenting:__ New developers can see what the application provides in the context of the programming language
@@ -75,14 +77,14 @@ response in each operation.
 
 __Re__presentational __S__tate __T__ransfer is an architectural style
 that defines a set of constraints for creating web APIs.
-The HTTP _protocol_ is one implementation of this architecture.
+The HTTP _protocol_ is one implementation of this architecture. [[Fielding PHD thesis](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)]
 
 ---
 
 ## REST Constraints
 
 - __Client__  (Requesting and displaying) - __Server__ (Data storage and application logic)
-- __Statelessness:__ Client sends all information necessary to process with any request
+- __Statelessness:__ Client sends all information with each request
 - __Caching:__ Non-modifying requests can be cached
 - __Layered System:__ Simplify by layering responsibilities
 - __Resources__ and __Uniform Interface__
@@ -147,14 +149,28 @@ A resource can be anything that is uniquely addressable.
 
 ---
 
+## But what about GraphQL?
+
+GraphQL is great for providing schemas and improved querying but
+can benefit a lot from the constraints of the REST architecture
+when it comes to modifying data.
+
+If it's REST __vs__ GraphQL everybody looses.
+
+---
+
+<Image src="img/graphql-transport.svg" size="contain" />
+
+---
+
 ## Middleware
 
-Workflows and cross-cutting concerns that can be added to services dynamically, e.g.
+Workflows and cross-cutting concerns that can be added to services dynamically
 
 - Validation
 - Checking permissions
-- Sending email on new user
-- Notifying clients about changes
+- Sending emails or other notifications
+- Logging and profiling
 
 ---
 
@@ -215,16 +231,10 @@ Workflows and cross-cutting concerns that can be added to services dynamically, 
 
 ---
 
-## But what about GraphQL?
-
-GraphQL makes a great complementary protocol to the REST architecture by
-providing schemas and improved querying mechanisms.
-
-If it's REST __vs__ GraphQL nobody is going to win.
-
----
-
 # Thank you!
 
 - [@daffl](https://twitter.com/daffl)
+- [feathersjs.com](https://feathersjs.com)
+- [daffl.github.io/api-patterns](https://daffl.github.io/api-patterns)
+- [Design Patterns for modern Web APIs](https://blog.feathersjs.com/design-patterns-for-modern-web-apis-1f046635215)
 - [![Bidali logo](img/bidali-logo.png)](https://bidali.com)

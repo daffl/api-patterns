@@ -17,3 +17,8 @@ pre .keyword, pre .tag {
 .token.function {
   color: #808080 !important;
 }
+
+.bqPFUu {
+  font-weight: 100;
+  color: #4b4df1;
+}
