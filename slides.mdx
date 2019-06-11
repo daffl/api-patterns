@@ -31,19 +31,21 @@ export { default as theme } from './theme'
 - REST
 - Middleware
 - Real-time 
-- GraphQL (❓)
 
 ---
 
 ## What's a Design Pattern?
 
-*Design patterns are formalized best practices that the programmer can use to solve common problems when designing an application or system.*
+Design patterns are formalized best practices that a programmer
+can use to solve common problems when designing an application or system.
 
 ---
 
 ## Service Layer
 
-*Defines an application’s boundary with a layer of services that establishes a set of available operations and coordinates the application’s response in each operation.*
+Defines an application’s boundary with a layer of services that
+establishes a set of available operations and coordinates the application’s
+response in each operation.
 
 ---
 
@@ -63,25 +65,27 @@ export { default as theme } from './theme'
 
 ## Service Layer Advantages
 
-- __Separation of Concerns and Testability:__ Test the application logic separate from how it is being accessed.
+- __Separation of Concerns and Testability:__ Test the application logic separate from how it is being accessed
 - __Self documenting:__ New developers can see what the application provides in the context of the programming language
-- __Transport agnostic:__ Clients like a CLI, GUI or web framework can use the service layer directly.
+- __Transport agnostic:__ Clients like a CLI, GUI or web framework can use the service layer directly
 
 ---
 
 ## REST
 
-__Re__presentational __S__tate __T__ransfer is an architectural style that defines a set of constraints for creating web APIs.
+__Re__presentational __S__tate __T__ransfer is an architectural style
+that defines a set of constraints for creating web APIs.
+The HTTP _protocol_ is one implementation of this architecture.
 
 ---
 
 ## REST Constraints
 
-- __Client-Server:__ Server: Data storage and application logic; Client: Requesting and displaying
-- __Statelessness:__ Client sends all information to process request.
-- __Caching:__ Non-modifying requests can be cached.
-- __Layered System:__ Allows for intermediaries
-- __Uniform Interface:__ Well defined operations to execute on resources.
+- __Client__  (Requesting and displaying) - __Server__ (Data storage and application logic)
+- __Statelessness:__ Client sends all information necessary to process with any request
+- __Caching:__ Non-modifying requests can be cached
+- __Layered System:__ Simplify by layering responsibilities
+- __Resources__ and __Uniform Interface__
 
 ---
 
@@ -125,8 +129,9 @@ A resource can be anything that is uniquely addressable.
 
 - Combine advantages of service layer and REST resources
 - HTTP-friendly but protocol independent
-- No need for repetitive GET, POST etc. handlers and routes
+- No repetitive GET, POST etc. handlers and routes
 - Easy to document, test and re-use
+- Encourages a layered system
 
 ---
 
@@ -157,6 +162,32 @@ Workflows and cross-cutting concerns that can be added to services dynamically, 
 
 ---
 
+<CodeSurfer
+  theme={highlighter}
+  code={require("!raw-loader!./snippets/message-middleware.js").default}
+  lang="js"
+  showNumbers={false}
+  dark={false}
+/>
+
+---
+
+<CodeSurfer
+  theme={highlighter}
+  code={require("!raw-loader!./snippets/middleware.js").default}
+  lang="js"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    {},
+    { range: [1, 5] },
+    { range: [7, 22] },
+    { range: [23, 32] }
+  ]}
+/>
+
+---
+
 ## Real-time
 
 | HTTP method | Service layer method | Real-time event |
@@ -181,6 +212,15 @@ Workflows and cross-cutting concerns that can be added to services dynamically, 
 - __RESTful services:__ A service layer that follows the REST architecture
 - __Middleware:__ Reusable functions that can control the flow of data
 - __Real-time:__ Events that can be sent automatically when following the REST architecture
+
+---
+
+## But what about GraphQL?
+
+GraphQL makes a great complementary protocol to the REST architecture by
+providing schemas and improved querying mechanisms.
+
+If it's REST __vs__ GraphQL nobody is going to win.
 
 ---
 
