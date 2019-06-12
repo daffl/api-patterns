@@ -109,10 +109,10 @@ A resource can be anything that is uniquely addressable.
 | --- | --- |
 | GET /messages      | messages.find() |
 | GET /messages/1    | messages.get(1) |
-| POST /messages     | messages.create(body) |
-| PUT /messages/1    | messages.update(1, body) |
-| PATCH /messages/1  | messages.patch(1, body) |
-| DELETE /messages/1 | messages.remove(1, body) |
+| POST /messages     | messages.create(data) |
+| PUT /messages/1    | messages.update(1, data) |
+| PATCH /messages/1  | messages.patch(1, data) |
+| DELETE /messages/1 | messages.remove(1) |
 
 
 ---
@@ -151,9 +151,8 @@ A resource can be anything that is uniquely addressable.
 
 ## But what about GraphQL?
 
-GraphQL is great for providing schemas and improved querying but
-can benefit a lot from the constraints of the REST architecture
-when it comes to modifying data.
+GraphQL is great for providing schemas and better querying but
+can benefit a lot from the REST architecture when it comes to modifying data.
 
 If it's REST __vs__ GraphQL everybody looses.
 
@@ -210,10 +209,10 @@ Workflows and cross-cutting concerns that can be added to services dynamically
 | --- | --- | --- |
 | GET /messages      | messages.find() | - |
 | GET /messages/1    | messages.get(1) | - |
-| POST /messages     | messages.create(body) | `message created` |
-| PUT /messages/1    | messages.update(1, body) | `message updated` |
-| PATCH /messages/1  | messages.patch(1, body) | `message patched` |
-| DELETE /users/1 | messages.remove(1, body) | `message removed` |
+| POST /messages     | messages.create(data) | `message created` |
+| PUT /messages/1    | messages.update(1, data) | `message updated` |
+| PATCH /messages/1  | messages.patch(1, data) | `message patched` |
+| DELETE /users/1 | messages.remove(1) | `message removed` |
 
 ---
 
