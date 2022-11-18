@@ -16,7 +16,7 @@
     "build": "rm -rf docs/ && mdx-deck build slides.mdx --no-html -d docs && cp -R img/ docs/img && cp styles.css docs/"
   },
   "devDependencies": {
-    "mdx-deck": "^1.10.2",
+    "mdx-deck": "^4.1.1",
     "mdx-deck-code-surfer": "^0.5.5",
     "raw-loader": "^2.0.0",
     "styled-components": "^4.2.0"
